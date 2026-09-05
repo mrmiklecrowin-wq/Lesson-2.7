@@ -12,8 +12,6 @@ public:
 	std::cout << "Ошибка: знаменатель равен нулю. Установлен в 1.\n";
 	number_two = 1;
 	}
-	}
-	Fraction() : number_one(0), number_two(1) {}
 
 	Fraction operator+(const Fraction& other) const {
 	return Fraction(number_one * other.number_two + other.number_one * number_two,number_two * other.number_two);
@@ -96,34 +94,8 @@ std::istream& operator>>(std::istream& istr, Fraction& f) {
 }
 
 int main() {
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-	
-	Fraction a, b;
-	
-	std::cout << "Введите первую дробь (числитель знаменатель): ";
-	std::cin >> a;
-	
-	std::cout << "Введите вторую дробь (числитель знаменатель): ";
-	std::cin >> b;
-	
-	std::cout << "Результаты:\n";
-	std::cout << a << " + " << b << " = " << (a + b) << "\n";
-	std::cout << a << " - " << b << " = " << (a - b) << "\n";
-	std::cout << a << " * " << b << " = " << (a * b) << "\n";
-	std::cout << a << " / " << b << " = " << (a / b) << "\n";
-	
-	std::cout << "Сравнение:\n";
-	std::cout << (a == b ? "Дроби равны" : "Дроби не равны") <<"\n";
-	std::cout << (a < b ? "Первая дробь меньше второй" : "Первая дробь не меньше второй") << "\n";
-	
-	std::cout << "\nУнарные операции:\n";
-	std::cout << "-a = " << (-a) << "\n";
-	
-	Fraction inc = a;
-	std::cout << "++a = " << (++inc) << " (после инкремента)\n";
-	inc = a;
-	std::cout << "a++ = " << (inc++) << " (старое значение), теперь a = " << inc << "\n";
+	Fraction f1, f2;
+
 	
 	return 0;
 }
